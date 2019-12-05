@@ -1,16 +1,18 @@
 PODS:
-  - SwiftyJSON (5.0.0)
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
 
 DEPENDENCIES:
-  - SwiftyJSON (~> 5.0)
+  - Charts
 
 SPEC REPOS:
   trunk:
-    - SwiftyJSON
+    - Charts
 
 SPEC CHECKSUMS:
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
 
-PODFILE CHECKSUM: c49e75cf27916918a8bcd96cd2aa82b299b060c1
+PODFILE CHECKSUM: a6857820fb42e39ac9f018dba074bfdf1f2f125d
 
 COCOAPODS: 1.8.4

@@ -1,2 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-BitcoinApp/Pods-BitcoinApp-frameworks.sh
-${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
+${BUILT_PRODUCTS_DIR}/Charts/Charts.framework

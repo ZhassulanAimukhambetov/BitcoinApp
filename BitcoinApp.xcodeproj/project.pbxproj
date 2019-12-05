@@ -14,10 +14,13 @@
 		D127C43F2397E3AA006A3A42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D127C43E2397E3AA006A3A42 /* Assets.xcassets */; };
 		D127C4422397E3AA006A3A42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D127C4402397E3AA006A3A42 /* LaunchScreen.storyboard */; };
 		D127C4502397E553006A3A42 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C44F2397E553006A3A42 /* NetworkService.swift */; };
-		D127C45223980248006A3A42 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C45123980248006A3A42 /* Base.swift */; };
 		D127C4542398025C006A3A42 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C4532398025C006A3A42 /* Coin.swift */; };
 		D127C458239809B2006A3A42 /* CoinNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C457239809B2006A3A42 /* CoinNetworkService.swift */; };
 		D127C47C2398B6B2006A3A42 /* CoinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C47B2398B6B2006A3A42 /* CoinsViewController.swift */; };
+		D127C47E2398F449006A3A42 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C47D2398F449006A3A42 /* Enums.swift */; };
+		D127C4802398F486006A3A42 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C47F2398F486006A3A42 /* Extensions.swift */; };
+		D127C4822398F52B006A3A42 /* HistoryNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C4812398F52B006A3A42 /* HistoryNetworkService.swift */; };
+		D127C4842398F5C7006A3A42 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C4832398F5C7006A3A42 /* History.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +35,13 @@
 		D127C4412397E3AA006A3A42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D127C4432397E3AA006A3A42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D127C44F2397E553006A3A42 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		D127C45123980248006A3A42 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		D127C4532398025C006A3A42 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		D127C457239809B2006A3A42 /* CoinNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinNetworkService.swift; sourceTree = "<group>"; };
 		D127C47B2398B6B2006A3A42 /* CoinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsViewController.swift; sourceTree = "<group>"; };
+		D127C47D2398F449006A3A42 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		D127C47F2398F486006A3A42 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D127C4812398F52B006A3A42 /* HistoryNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNetworkService.swift; sourceTree = "<group>"; };
+		D127C4832398F5C7006A3A42 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +108,7 @@
 		D127C4492397E3E4006A3A42 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D127C45123980248006A3A42 /* Base.swift */,
+				D127C4832398F5C7006A3A42 /* History.swift */,
 				D127C4532398025C006A3A42 /* Coin.swift */,
 			);
 			path = Model;
@@ -128,6 +134,8 @@
 		D127C44D2397E442006A3A42 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D127C47D2398F449006A3A42 /* Enums.swift */,
+				D127C47F2398F486006A3A42 /* Extensions.swift */,
 				D127C43E2397E3AA006A3A42 /* Assets.xcassets */,
 				D127C4432397E3AA006A3A42 /* Info.plist */,
 			);
@@ -139,6 +147,7 @@
 			children = (
 				D127C44F2397E553006A3A42 /* NetworkService.swift */,
 				D127C457239809B2006A3A42 /* CoinNetworkService.swift */,
+				D127C4812398F52B006A3A42 /* HistoryNetworkService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -259,11 +268,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D127C4542398025C006A3A42 /* Coin.swift in Sources */,
+				D127C4822398F52B006A3A42 /* HistoryNetworkService.swift in Sources */,
+				D127C4802398F486006A3A42 /* Extensions.swift in Sources */,
+				D127C4842398F5C7006A3A42 /* History.swift in Sources */,
 				D127C458239809B2006A3A42 /* CoinNetworkService.swift in Sources */,
 				D127C4362397E3A7006A3A42 /* AppDelegate.swift in Sources */,
-				D127C45223980248006A3A42 /* Base.swift in Sources */,
 				D127C4502397E553006A3A42 /* NetworkService.swift in Sources */,
 				D127C4382397E3A7006A3A42 /* SceneDelegate.swift in Sources */,
+				D127C47E2398F449006A3A42 /* Enums.swift in Sources */,
 				D127C47C2398B6B2006A3A42 /* CoinsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

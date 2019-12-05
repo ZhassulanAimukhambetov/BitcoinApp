@@ -6,6 +6,6 @@ target 'BitcoinApp' do
   use_frameworks!
 
   # Pods for BitcoinApp
-pod 'SwiftyJSON', '~> 5.0'
+  pod 'Charts'
 
 end

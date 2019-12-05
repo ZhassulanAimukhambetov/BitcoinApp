@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Coins-->
         <scene sceneID="tne-QT-ifu">
@@ -14,14 +19,82 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yyB-0e-4aG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <segments>
+                                    <segment title="KZT"/>
+                                    <segment title="USD"/>
+                                    <segment title="EUR"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="currencySegmentControlSelect:" destination="BYZ-38-t0r" eventType="valueChanged" id="SMl-dL-S1G"/>
+                                </connections>
+                            </segmentedControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoinsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1gr-hw-0ha">
+                                <rect key="frame" x="157.5" y="71.5" width="60" height="59.5"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1gr-hw-0ha" secondAttribute="height" multiplier="1:1" id="AnN-cb-9hq"/>
+                                    <constraint firstAttribute="height" constant="60" id="ytF-gY-TgA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emU-kS-N6P">
+                                <rect key="frame" x="139" y="151" width="97.5" height="60"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JO8-8r-jJs" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="349" width="375" height="269"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="we7-cK-ocg">
+                                <rect key="frame" x="0.0" y="318" width="375" height="32"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <segments>
+                                    <segment title="Week"/>
+                                    <segment title="Month"/>
+                                    <segment title="Year"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="periotSegmentControlSelect:" destination="BYZ-38-t0r" eventType="valueChanged" id="HGc-V6-ALX"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="we7-cK-ocg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1Pi-6D-6b9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="we7-cK-ocg" secondAttribute="trailing" id="4OJ-oQ-0nw"/>
+                            <constraint firstItem="1gr-hw-0ha" firstAttribute="top" secondItem="yyB-0e-4aG" secondAttribute="bottom" constant="40" id="9hC-X5-7mc"/>
+                            <constraint firstItem="JO8-8r-jJs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CJQ-ep-GYO"/>
+                            <constraint firstItem="JO8-8r-jJs" firstAttribute="top" secondItem="we7-cK-ocg" secondAttribute="bottom" id="FBW-LP-7Z0"/>
+                            <constraint firstItem="JO8-8r-jJs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MTf-1c-APq"/>
+                            <constraint firstItem="emU-kS-N6P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PHu-19-1VC"/>
+                            <constraint firstItem="yyB-0e-4aG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QCf-iX-oKB"/>
+                            <constraint firstItem="yyB-0e-4aG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TMv-Sp-72E"/>
+                            <constraint firstItem="JO8-8r-jJs" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Uu7-OW-d6a"/>
+                            <constraint firstItem="emU-kS-N6P" firstAttribute="top" secondItem="1gr-hw-0ha" secondAttribute="bottom" constant="20" id="XoM-bl-qF3"/>
+                            <constraint firstItem="we7-cK-ocg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZpW-Ck-0Vt"/>
+                            <constraint firstItem="1gr-hw-0ha" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tUZ-ma-QD2"/>
+                            <constraint firstItem="yyB-0e-4aG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xCu-I8-nzQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Coins" selectedImage="coins" id="qLL-OT-g67"/>
+                    <tabBarItem key="tabBarItem" title="Coins" image="coins" selectedImage="coins" id="qLL-OT-g67"/>
+                    <connections>
+                        <outlet property="bitcoinChartView" destination="JO8-8r-jJs" id="SLX-jc-6oN"/>
+                        <outlet property="currencySegmentControl" destination="yyB-0e-4aG" id="b3Y-fE-Uy6"/>
+                        <outlet property="periodSegmentControl" destination="we7-cK-ocg" id="0td-xv-owK"/>
+                        <outlet property="rateValueLabel" destination="emU-kS-N6P" id="GbB-cX-EOJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-796" y="940"/>
+            <point key="canvasLocation" x="-796" y="939.58020989505258"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="aRT-Fg-CbJ">
@@ -76,9 +149,11 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="vpk-hM-mKq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zwG-QU-LWv">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" itemPositioning="centered" id="zwG-QU-LWv">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="IeQ-CF-Qv8"/>
@@ -94,7 +169,7 @@
         <scene sceneID="oWY-LG-5qU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tXy-Yi-QrS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" selectedImage="rectangle.and.paperclip" catalog="system" id="YmA-Hm-ewv"/>
+                    <tabBarItem key="tabBarItem" title="List" image="creditcard.fill" catalog="system" selectedImage="creditcard.fill" id="YmA-Hm-ewv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AI2-iA-I6f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -119,7 +194,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Leq-fs-iav"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calc" selectedImage="calculator" id="9VS-n4-LRk"/>
+                    <tabBarItem key="tabBarItem" title="Calc" image="calculator" selectedImage="calculator" id="9VS-n4-LRk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L1T-pC-jzX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,8 +202,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bitcoinsign.circle.fill" catalog="system" width="64" height="62"/>
         <image name="calculator" width="30" height="30"/>
         <image name="coins" width="30" height="30"/>
-        <image name="rectangle.and.paperclip" catalog="system" width="64" height="50"/>
+        <image name="creditcard.fill" catalog="system" width="64" height="46"/>
     </resources>
 </document>
