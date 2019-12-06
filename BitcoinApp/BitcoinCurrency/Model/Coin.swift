@@ -22,7 +22,6 @@ struct Coin {
         let rateFloat = json["rate_float"] as? Double else {
             return nil
         }
-        
         self.code = code
         self.rate = rate
         self.description = description

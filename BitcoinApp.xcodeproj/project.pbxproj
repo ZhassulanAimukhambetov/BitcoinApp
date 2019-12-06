@@ -23,6 +23,7 @@
 		D127C4902399A0A3006A3A42 /* TransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C48F2399A0A3006A3A42 /* TransactionsTableViewController.swift */; };
 		D127C4942399A1A2006A3A42 /* TransactionNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C4932399A1A2006A3A42 /* TransactionNetworkService.swift */; };
 		D127C4962399A1B6006A3A42 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C4952399A1B6006A3A42 /* Transaction.swift */; };
+		D12A8365239AAD12005578A0 /* ConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12A8364239AAD12005578A0 /* ConvertViewController.swift */; };
 		D179C4222399B116000D9E62 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D179C4212399B116000D9E62 /* TransactionCell.swift */; };
 		D179C424239A6E44000D9E62 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D179C423239A6E44000D9E62 /* TransactionDetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		D127C48F2399A0A3006A3A42 /* TransactionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewController.swift; sourceTree = "<group>"; };
 		D127C4932399A1A2006A3A42 /* TransactionNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionNetworkService.swift; sourceTree = "<group>"; };
 		D127C4952399A1B6006A3A42 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		D12A8364239AAD12005578A0 /* ConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewController.swift; sourceTree = "<group>"; };
 		D179C4212399B116000D9E62 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		D179C423239A6E44000D9E62 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +124,7 @@
 			children = (
 				D179C4212399B116000D9E62 /* TransactionCell.swift */,
 				D179C423239A6E44000D9E62 /* TransactionDetailViewController.swift */,
+				D12A8364239AAD12005578A0 /* ConvertViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			files = (
 				D127C4902399A0A3006A3A42 /* TransactionsTableViewController.swift in Sources */,
 				D127C4542398025C006A3A42 /* Coin.swift in Sources */,
+				D12A8365239AAD12005578A0 /* ConvertViewController.swift in Sources */,
 				D127C4822398F52B006A3A42 /* HistoryNetworkService.swift in Sources */,
 				D127C4802398F486006A3A42 /* Extensions.swift in Sources */,
 				D127C458239809B2006A3A42 /* CoinNetworkService.swift in Sources */,

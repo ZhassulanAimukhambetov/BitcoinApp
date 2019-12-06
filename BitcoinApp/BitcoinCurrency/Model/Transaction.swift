@@ -16,14 +16,14 @@ struct Transaction {
     let amount: Double
     
     init? (json: [String: AnyObject]) {
-        guard let date = json["date"] as? String,
+        guard let dateString = json["date"] as? String,
         let id = json["tid"] as? Int,
         let price = json["price"] as? String,
         let type = json["type"] as? Int,
         let amount = json["amount"] as? String else { return nil }
         
-        guard let date1 = Int(date) else { return nil }
-        self.date = Date(timeIntervalSince1970: TimeInterval(date1))
+        guard let date = Int(dateString) else { return nil }
+        self.date = Date(timeIntervalSince1970: TimeInterval(date))
         self.id = id
         self.price = Double(price) ?? 0
         self.type = TransactionType(rawValue: type) ?? TransactionType.buy

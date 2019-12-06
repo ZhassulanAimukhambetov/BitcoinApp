@@ -28,6 +28,8 @@ class CoinsViewController: UIViewController {
         updateCurrencyHistory(currency: currency, period: period)
     }
     
+    //MARK: - @IBActions
+    
     @IBAction func currencySegmentControlSelect(_ sender: UISegmentedControl) {
         guard let currency = Currency(rawValue: sender.selectedSegmentIndex) else { return }
         updateCurrencyValue(currency: currency)
@@ -40,6 +42,8 @@ class CoinsViewController: UIViewController {
         guard let currency = Currency(rawValue: currencySegmentControl.selectedSegmentIndex) else { return }
         updateCurrencyHistory(currency: currency, period: period)
     }
+    
+    //MARK: - getData
     
     func updateCurrencyHistory(currency: Currency, period: Period) {
         HistoryNetworkService.getHistory(currency: currency, period: period) { (dataY) in
@@ -57,13 +61,23 @@ class CoinsViewController: UIViewController {
         }
     }
     
+    //MARK: - Configure
+    
     func configureSegmentControl() {
         periodSegmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
         currencySegmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
     }
     
+    func configureChartView() {
+        bitcoinChartView.xAxis.drawLabelsEnabled = false
+        bitcoinChartView.leftAxis.enabled = false
+        bitcoinChartView.leftAxis.drawGridLinesEnabled = false
+        bitcoinChartView.rightAxis.enabled = false
+        bitcoinChartView.rightAxis.drawGridLinesEnabled = false
+        bitcoinChartView.backgroundColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
+    }
+    
     func setChart (values: [Double], currency: Currency, period: Period) {
-        
         var yValues = [ChartDataEntry]()
         for i in 0..<values.count {
             let dataEntry = ChartDataEntry(x: Double(i + 1), y: values[i])
@@ -83,14 +97,5 @@ class CoinsViewController: UIViewController {
         
         bitcoinChartView.data = chartData
         bitcoinChartView.animate(xAxisDuration: 0.3, yAxisDuration: 0.2)
-    }
-    
-    func configureChartView() {
-        bitcoinChartView.xAxis.drawLabelsEnabled = false
-        bitcoinChartView.leftAxis.enabled = false
-        bitcoinChartView.leftAxis.drawGridLinesEnabled = false
-        bitcoinChartView.rightAxis.enabled = false
-        bitcoinChartView.rightAxis.drawGridLinesEnabled = false
-        bitcoinChartView.backgroundColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
     }
 }
