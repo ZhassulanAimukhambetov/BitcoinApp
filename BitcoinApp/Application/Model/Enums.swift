@@ -51,3 +51,15 @@ enum Period: Int {
         }
     }
 }
+
+enum TransactionType: Int {
+    case buy
+    case sell
+    
+    var name: String {
+        switch self {
+        case .buy: return "Buy"
+        case .sell: return "Sell"
+        }
+    }
+}

@@ -17,24 +17,18 @@ class HistoryNetworkService {
         let endDate = Date()
         let startDate = endDate.addingTimeInterval(period.interval)
 
-        let endDateString = getStringFromDate(date: endDate)
-        let startDateString = getStringFromDate(date: startDate)
+        let endDateString = endDate.formatingToStartEndString()
+        let startDateString = startDate.formatingToStartEndString()
 
         let urlString = "\(urlApi)?currency=\(currency.name)&start=\(startDateString)&end=\(endDateString)"
         guard let url = URL(string: urlString) else { return }
         NetworkService.shared.getData(url: url) { (json) in
             guard let json = json as? [String : AnyObject] else { return }
-            guard let history = History(json: json) else { return }
-            let dataPoints = history.dataPoints.sorted {$0 < $1}
+            guard let history = json["bpi"] as? [String : Double] else { return }
+            let dataPoints = history.sorted {$0 < $1}
             let dataY = getDataPoints(dataPoints: dataPoints, period: period)
             completion(dataY)
         }
-    }
-    
-    static private func getStringFromDate(date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter.string(from: date)
     }
     
     static private func getDataPoints(dataPoints: [(key: String, value: Double)], period: Period) -> [Double] {
