@@ -17,7 +17,6 @@
 		D127C4542398025C006A3A42 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C4532398025C006A3A42 /* Coin.swift */; };
 		D127C458239809B2006A3A42 /* CoinNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C457239809B2006A3A42 /* CoinNetworkService.swift */; };
 		D127C47C2398B6B2006A3A42 /* CoinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C47B2398B6B2006A3A42 /* CoinsViewController.swift */; };
-		D127C47E2398F449006A3A42 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C47D2398F449006A3A42 /* Enums.swift */; };
 		D127C4802398F486006A3A42 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C47F2398F486006A3A42 /* Extensions.swift */; };
 		D127C4822398F52B006A3A42 /* HistoryNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C4812398F52B006A3A42 /* HistoryNetworkService.swift */; };
 		D127C4902399A0A3006A3A42 /* TransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127C48F2399A0A3006A3A42 /* TransactionsTableViewController.swift */; };
@@ -26,6 +25,12 @@
 		D12A8365239AAD12005578A0 /* ConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12A8364239AAD12005578A0 /* ConvertViewController.swift */; };
 		D179C4222399B116000D9E62 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D179C4212399B116000D9E62 /* TransactionCell.swift */; };
 		D179C424239A6E44000D9E62 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D179C423239A6E44000D9E62 /* TransactionDetailViewController.swift */; };
+		D1ACC08A239C081C006E5171 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ACC089239C081C006E5171 /* Base.swift */; };
+		D1ACC08C239C08A4006E5171 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ACC08B239C08A4006E5171 /* Errors.swift */; };
+		D1ACC08E239C0E2B006E5171 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ACC08D239C0E2B006E5171 /* History.swift */; };
+		D1ACC097239C3EFE006E5171 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D1ACC096239C3EFD006E5171 /* Default-568h@2x.png */; };
+		D1ACC099239C4AED006E5171 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ACC098239C4AED006E5171 /* Currency.swift */; };
+		D1ACC09B239C4B19006E5171 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ACC09A239C4B19006E5171 /* Period.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +48,6 @@
 		D127C4532398025C006A3A42 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		D127C457239809B2006A3A42 /* CoinNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinNetworkService.swift; sourceTree = "<group>"; };
 		D127C47B2398B6B2006A3A42 /* CoinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsViewController.swift; sourceTree = "<group>"; };
-		D127C47D2398F449006A3A42 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		D127C47F2398F486006A3A42 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D127C4812398F52B006A3A42 /* HistoryNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNetworkService.swift; sourceTree = "<group>"; };
 		D127C48F2399A0A3006A3A42 /* TransactionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +56,12 @@
 		D12A8364239AAD12005578A0 /* ConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewController.swift; sourceTree = "<group>"; };
 		D179C4212399B116000D9E62 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		D179C423239A6E44000D9E62 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
+		D1ACC089239C081C006E5171 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		D1ACC08B239C08A4006E5171 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		D1ACC08D239C0E2B006E5171 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		D1ACC096239C3EFD006E5171 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D1ACC098239C4AED006E5171 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		D1ACC09A239C4B19006E5171 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +96,7 @@
 		D127C4292397E3A7006A3A42 = {
 			isa = PBXGroup;
 			children = (
+				D1ACC096239C3EFD006E5171 /* Default-568h@2x.png */,
 				D127C4342397E3A7006A3A42 /* BitcoinApp */,
 				D127C4332397E3A7006A3A42 /* Products */,
 				3DE6B9258F0116F9F58DFB9C /* Pods */,
@@ -104,10 +115,12 @@
 		D127C4342397E3A7006A3A42 /* BitcoinApp */ = {
 			isa = PBXGroup;
 			children = (
-				D133494A239AEF8900112B52 /* ConverterViewController */,
-				D1334949239AEF5E00112B52 /* TransactionViewController */,
-				D1334948239AEF3800112B52 /* CoinViewController */,
 				D127C48623999A47006A3A42 /* Application */,
+				D127C48923999AAF006A3A42 /* Storyboards */,
+				D127C44D2397E442006A3A42 /* Resource */,
+				D1334948239AEF3800112B52 /* CoinViewController */,
+				D1334949239AEF5E00112B52 /* TransactionViewController */,
+				D133494A239AEF8900112B52 /* ConverterViewController */,
 			);
 			path = BitcoinApp;
 			sourceTree = "<group>";
@@ -125,9 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				D127C48723999A87006A3A42 /* Model */,
-				D127C48923999AAF006A3A42 /* View */,
 				D127C48823999A9C006A3A42 /* Controller */,
-				D127C44D2397E442006A3A42 /* Resource */,
 				D127C48A23999AC2006A3A42 /* Service */,
 			);
 			path = Application;
@@ -136,7 +147,7 @@
 		D127C48723999A87006A3A42 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D127C47D2398F449006A3A42 /* Enums.swift */,
+				D1ACC09C239C4B3F006E5171 /* Enums */,
 				D127C47F2398F486006A3A42 /* Extensions.swift */,
 			);
 			path = Model;
@@ -151,13 +162,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		D127C48923999AAF006A3A42 /* View */ = {
+		D127C48923999AAF006A3A42 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				D127C43B2397E3A7006A3A42 /* Main.storyboard */,
 				D127C4402397E3AA006A3A42 /* LaunchScreen.storyboard */,
 			);
-			path = View;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		D127C48A23999AC2006A3A42 /* Service */ = {
@@ -171,10 +182,9 @@
 		D1334948239AEF3800112B52 /* CoinViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D127C47B2398B6B2006A3A42 /* CoinsViewController.swift */,
-				D127C457239809B2006A3A42 /* CoinNetworkService.swift */,
-				D127C4532398025C006A3A42 /* Coin.swift */,
-				D127C4812398F52B006A3A42 /* HistoryNetworkService.swift */,
+				D1ACC086239C07C3006E5171 /* Model */,
+				D1ACC087239C07CD006E5171 /* Controller */,
+				D1ACC088239C07DC006E5171 /* Service */,
 			);
 			path = CoinViewController;
 			sourceTree = "<group>";
@@ -182,11 +192,10 @@
 		D1334949239AEF5E00112B52 /* TransactionViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D127C4952399A1B6006A3A42 /* Transaction.swift */,
-				D179C4212399B116000D9E62 /* TransactionCell.swift */,
-				D179C423239A6E44000D9E62 /* TransactionDetailViewController.swift */,
-				D127C48F2399A0A3006A3A42 /* TransactionsTableViewController.swift */,
-				D127C4932399A1A2006A3A42 /* TransactionNetworkService.swift */,
+				D1ACC08F239C3A4F006E5171 /* Model */,
+				D1ACC091239C3A65006E5171 /* View */,
+				D1ACC090239C3A57006E5171 /* Controller */,
+				D1ACC092239C3A7A006E5171 /* Service */,
 			);
 			path = TransactionViewController;
 			sourceTree = "<group>";
@@ -197,6 +206,76 @@
 				D12A8364239AAD12005578A0 /* ConvertViewController.swift */,
 			);
 			path = ConverterViewController;
+			sourceTree = "<group>";
+		};
+		D1ACC086239C07C3006E5171 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D127C4532398025C006A3A42 /* Coin.swift */,
+				D1ACC089239C081C006E5171 /* Base.swift */,
+				D1ACC08D239C0E2B006E5171 /* History.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1ACC087239C07CD006E5171 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D127C47B2398B6B2006A3A42 /* CoinsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1ACC088239C07DC006E5171 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D127C457239809B2006A3A42 /* CoinNetworkService.swift */,
+				D127C4812398F52B006A3A42 /* HistoryNetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D1ACC08F239C3A4F006E5171 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D127C4952399A1B6006A3A42 /* Transaction.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D1ACC090239C3A57006E5171 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D127C48F2399A0A3006A3A42 /* TransactionsTableViewController.swift */,
+				D179C423239A6E44000D9E62 /* TransactionDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1ACC091239C3A65006E5171 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D179C4212399B116000D9E62 /* TransactionCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D1ACC092239C3A7A006E5171 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D127C4932399A1A2006A3A42 /* TransactionNetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D1ACC09C239C4B3F006E5171 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				D1ACC08B239C08A4006E5171 /* Errors.swift */,
+				D1ACC098239C4AED006E5171 /* Currency.swift */,
+				D1ACC09A239C4B19006E5171 /* Period.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D127C4422397E3AA006A3A42 /* LaunchScreen.storyboard in Resources */,
+				D1ACC097239C3EFE006E5171 /* Default-568h@2x.png in Resources */,
 				D127C43F2397E3AA006A3A42 /* Assets.xcassets in Resources */,
 				D127C43D2397E3A7006A3A42 /* Main.storyboard in Resources */,
 			);
@@ -314,6 +394,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1ACC08E239C0E2B006E5171 /* History.swift in Sources */,
+				D1ACC08A239C081C006E5171 /* Base.swift in Sources */,
 				D127C4902399A0A3006A3A42 /* TransactionsTableViewController.swift in Sources */,
 				D127C4542398025C006A3A42 /* Coin.swift in Sources */,
 				D12A8365239AAD12005578A0 /* ConvertViewController.swift in Sources */,
@@ -322,11 +404,13 @@
 				D127C458239809B2006A3A42 /* CoinNetworkService.swift in Sources */,
 				D127C4962399A1B6006A3A42 /* Transaction.swift in Sources */,
 				D127C4362397E3A7006A3A42 /* AppDelegate.swift in Sources */,
+				D1ACC09B239C4B19006E5171 /* Period.swift in Sources */,
+				D1ACC099239C4AED006E5171 /* Currency.swift in Sources */,
 				D127C4942399A1A2006A3A42 /* TransactionNetworkService.swift in Sources */,
 				D127C4502397E553006A3A42 /* NetworkService.swift in Sources */,
 				D179C4222399B116000D9E62 /* TransactionCell.swift in Sources */,
 				D127C4382397E3A7006A3A42 /* SceneDelegate.swift in Sources */,
-				D127C47E2398F449006A3A42 /* Enums.swift in Sources */,
+				D1ACC08C239C08A4006E5171 /* Errors.swift in Sources */,
 				D179C424239A6E44000D9E62 /* TransactionDetailViewController.swift in Sources */,
 				D127C47C2398B6B2006A3A42 /* CoinsViewController.swift in Sources */,
 			);
@@ -475,7 +559,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YPDU2X4R25;
-				INFOPLIST_FILE = BitcoinApp/Application/Resource/Info.plist;
+				INFOPLIST_FILE = BitcoinApp/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -494,7 +578,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YPDU2X4R25;
-				INFOPLIST_FILE = BitcoinApp/Application/Resource/Info.plist;
+				INFOPLIST_FILE = BitcoinApp/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

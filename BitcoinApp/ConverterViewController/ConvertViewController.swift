@@ -32,9 +32,9 @@ class ConvertViewController: UIViewController {
     
     @IBAction func currencySegmentControlSelect(_ sender: UISegmentedControl) {
         if isCurrencyConvert {
-            currencyLabel.text = Currency(rawValue: sender.selectedSegmentIndex)?.text
+            currencyLabel.text = Currency(rawValue: sender.selectedSegmentIndex)?.symbol
         } else {
-            bitcoinLabel.text = Currency(rawValue: sender.selectedSegmentIndex)?.text
+            bitcoinLabel.text = Currency(rawValue: sender.selectedSegmentIndex)?.symbol
         }
         guard let currency = Currency(rawValue: sender.selectedSegmentIndex) else { return }
         updateCurrencyValue(currency: currency) {

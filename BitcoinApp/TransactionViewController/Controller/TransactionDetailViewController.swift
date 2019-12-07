@@ -14,7 +14,7 @@ class TransactionDetailViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
-    
+    @IBOutlet weak var timeLabel: UILabel!
     var transaction: Transaction?
     
     override func viewDidLoad() {
@@ -25,9 +25,15 @@ class TransactionDetailViewController: UIViewController {
     func configureLabels() {
         guard let transaction = transaction else { return }
         idLabel.text = String(transaction.id)
-        dateLabel.text = transaction.date.formatingToCellString()
-        priceLabel.text = transaction.price.formatingToString()
-        typeLabel.text = transaction.type.name
-        countLabel.text = transaction.amount.formatingToString()
+        priceLabel.text = transaction.price
+        countLabel.text = transaction.amount
+        typeLabel.text = transaction.type == 0 ? "buy" : "sell"
+        guard let dateInt = Int(transaction.date) else {
+            dateLabel.text = "no date"
+            return
+        }
+        let date = Date(timeIntervalSince1970: TimeInterval(dateInt))
+        dateLabel.text = date.formatingToString(format: "MMM d, yyyy")
+        timeLabel.text = date.formatingToString(format: "HH:mm:ss")
     }
 }

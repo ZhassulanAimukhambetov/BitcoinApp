@@ -45,14 +45,11 @@ extension TransactionsTableViewController {
 
 extension TransactionsTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == identifier {
-            if let cell = sender as? TransactionCell {
-                if let indexPath = tableView.indexPath(for: cell){
-                    let transaction = transactions[indexPath.row]
-                    let detailVC = segue.destination as? TransactionDetailViewController
-                    detailVC?.transaction = transaction
-                }
-            }
-        }
+        guard segue.identifier == identifier,
+        let cell = sender as? TransactionCell,
+        let indexPath = tableView.indexPath(for: cell) else { return }
+        let transaction = transactions[indexPath.row]
+        let detailVC = segue.destination as? TransactionDetailViewController
+        detailVC?.transaction = transaction
     }
 }

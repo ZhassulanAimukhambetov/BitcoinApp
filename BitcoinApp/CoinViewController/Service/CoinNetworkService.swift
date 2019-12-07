@@ -15,12 +15,14 @@ class CoinNetworkService {
     static func getCoin (currency: Currency, completion: @escaping (Coin) -> Void) {
         let urlString = urlApi + currency.name + ".json"
         guard let url = URL(string: urlString) else { return }
-        NetworkService.shared.getData(url: url) { (json) in
-            guard let json = json as? [String : AnyObject] else { return }
-            guard let base = json["bpi"] as? [String : AnyObject] else { return }
-            guard let coinData = base[currency.name] as? [String : AnyObject] else { return }
-            guard let coin = Coin(json: coinData) else { return }
-            completion(coin)
+        NetworkService.shared.getData(url: url) { (data) in
+            do {
+                let bitcoinData = try JSONDecoder().decode(Base.self, from: data())
+                guard let coin = bitcoinData.coins[currency.name] else { return }
+                completion(coin)
+            } catch let error {
+                print(error)
+            }
         }
     }
 }

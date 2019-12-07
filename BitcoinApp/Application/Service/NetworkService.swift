@@ -8,21 +8,16 @@
 
 import Foundation
 
-class NetworkService {
+open class NetworkService {
     
     private init() {}
     static let shared = NetworkService()
     
-    func getData(url: URL, completion: @escaping (Any) -> Void) {
-
+    open func getData(url: URL, completion: @escaping (_ data: () throws -> Data) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data, error == nil else { return }
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options:[])
-                completion(json)
-            } catch {
-                print(error)
-            }
+            guard error == nil else { return completion({ throw Errors.errorForData }) }
+            guard data != nil, let data = data else { return completion({ throw Errors.dataEmpty }) }
+            completion({ data })
         }.resume()
     }
 }

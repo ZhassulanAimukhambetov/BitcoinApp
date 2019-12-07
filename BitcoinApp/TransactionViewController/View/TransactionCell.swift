@@ -9,7 +9,7 @@
 import UIKit
 
 class TransactionCell: UITableViewCell {
-
+    
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
@@ -25,8 +25,12 @@ class TransactionCell: UITableViewCell {
         self.backgroundColor = indexPath.row % 2 == 0 ? cellOddColor : cellEvenColor
         self.selectedBackgroundView = backgroundView
         numberLabel.text = String(indexPath.row + 1)
-        amountLabel.text = transaction.amount.formatingToString() + " B"
-        dateLabel.text = transaction.date.formatingToCellString()
-        typeLabel.text = transaction.type.name
+        amountLabel.text = transaction.amount + " B"
+        typeLabel.text = transaction.type == 0 ? "buy" : "sell"
+        guard let dateInt = Int(transaction.date) else {
+            dateLabel.text = "no date"
+            return
+        }
+        dateLabel.text = Date(timeIntervalSince1970: TimeInterval(dateInt)).formatingToString(format: "MMM d, HH:mm:ss")
     }
 }

@@ -10,8 +10,9 @@ import UIKit
 import Charts
 
 class CoinsViewController: UIViewController {
+
     
-    @IBOutlet weak var bitcoinChartView: LineChartView!
+    @IBOutlet weak var historyChartView: LineChartView!
     @IBOutlet weak var rateValueLabel: UILabel!
     @IBOutlet weak var periodSegmentControl: UISegmentedControl!
     @IBOutlet weak var currencySegmentControl: UISegmentedControl!
@@ -46,9 +47,9 @@ class CoinsViewController: UIViewController {
     //MARK: - getData
     
     func updateCurrencyHistory(currency: Currency, period: Period) {
-        HistoryNetworkService.getHistory(currency: currency, period: period) { (dataY) in
+        HistoryNetworkService.getDataPoints(currency: currency, period: period) { (dataPoints) in
             DispatchQueue.main.async {
-                self.setChart(values: dataY, currency: currency, period: period)
+                self.setChart(dataHistory: dataPoints, currency: currency, period: period)
             }
         }
     }
@@ -56,7 +57,7 @@ class CoinsViewController: UIViewController {
     func updateCurrencyValue(currency: Currency) {
         CoinNetworkService.getCoin(currency: currency) { (coin) in
             DispatchQueue.main.async {
-                self.rateValueLabel.text = "\(coin.rateFloat.formatingToString())\(currency.text)"
+                self.rateValueLabel.text = "\(coin.rateFloat.formatingToString())\(currency.symbol)"
             }
         }
     }
@@ -64,23 +65,23 @@ class CoinsViewController: UIViewController {
     //MARK: - Configure
     
     func configureSegmentControl() {
-        periodSegmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
-        currencySegmentControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .normal)
+        periodSegmentControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
+        currencySegmentControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
     }
     
     func configureChartView() {
-        bitcoinChartView.xAxis.drawLabelsEnabled = false
-        bitcoinChartView.leftAxis.enabled = false
-        bitcoinChartView.leftAxis.drawGridLinesEnabled = false
-        bitcoinChartView.rightAxis.enabled = false
-        bitcoinChartView.rightAxis.drawGridLinesEnabled = false
-        bitcoinChartView.backgroundColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
+        historyChartView.xAxis.drawLabelsEnabled = false
+        historyChartView.leftAxis.enabled = false
+        historyChartView.leftAxis.drawGridLinesEnabled = false
+        historyChartView.rightAxis.enabled = false
+        historyChartView.rightAxis.drawGridLinesEnabled = false
+        historyChartView.backgroundColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
     }
     
-    func setChart (values: [Double], currency: Currency, period: Period) {
+    func setChart (dataHistory: [Double], currency: Currency, period: Period) {
         var yValues = [ChartDataEntry]()
-        for i in 0..<values.count {
-            let dataEntry = ChartDataEntry(x: Double(i + 1), y: values[i])
+        for (index, value) in dataHistory.enumerated() {
+            let dataEntry = ChartDataEntry(x: Double(index + 1), y: value)
             yValues.append(dataEntry)
         }
         
@@ -91,11 +92,11 @@ class CoinsViewController: UIViewController {
         lineDataSet.circleRadius = 3.0
         lineDataSet.circleHoleRadius = 2.0
         
-        var chartDataSet: [LineChartDataSet] = [LineChartDataSet]()
+        var chartDataSet: [LineChartDataSet] = []
         chartDataSet.append(lineDataSet)
-        let chartData: LineChartData = LineChartData(dataSets: chartDataSet)
+        let chartData = LineChartData(dataSets: chartDataSet)
         
-        bitcoinChartView.data = chartData
-        bitcoinChartView.animate(xAxisDuration: 0.3, yAxisDuration: 0.2)
+        historyChartView.data = chartData
+        historyChartView.animate(xAxisDuration: 0.3, yAxisDuration: 0.2)
     }
 }
