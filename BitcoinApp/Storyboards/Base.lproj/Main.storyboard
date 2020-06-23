@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vpk-hM-mKq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vpk-hM-mKq">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +34,7 @@
                                     <action selector="currencySegmentControlSelect:" destination="BYZ-38-t0r" eventType="valueChanged" id="SMl-dL-S1G"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JO8-8r-jJs" customClass="LineChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JO8-8r-jJs" customClass="ChartsView" customModule="BitcoinApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="349" width="375" height="269"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -55,7 +55,7 @@
                                 <rect key="frame" x="139" y="107" width="97.5" height="120"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoinsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1gr-hw-0ha">
-                                        <rect key="frame" x="23.5" y="0.5" width="50" height="49.5"/>
+                                        <rect key="frame" x="23.5" y="0.5" width="50" height="49"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="K9m-Mz-4bW"/>
@@ -91,7 +91,7 @@
                     <tabBarItem key="tabBarItem" title="Coins" image="coins" selectedImage="coins" id="qLL-OT-g67"/>
                     <connections>
                         <outlet property="currencySegmentControl" destination="yyB-0e-4aG" id="b3Y-fE-Uy6"/>
-                        <outlet property="historyChartView" destination="JO8-8r-jJs" id="Ffz-9p-Gw7"/>
+                        <outlet property="histryChartsView" destination="JO8-8r-jJs" id="Exl-OP-cVt"/>
                         <outlet property="periodSegmentControl" destination="we7-cK-ocg" id="0td-xv-owK"/>
                         <outlet property="rateValueLabel" destination="emU-kS-N6P" id="GbB-cX-EOJ"/>
                     </connections>
@@ -678,7 +678,7 @@
                                     <action selector="currencySegmentControlSelect:" destination="BYZ-38-t0r" eventType="valueChanged" id="qtq-gB-PA5"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ⓢ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZf-5v-KYu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₸" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZf-5v-KYu">
                                 <rect key="frame" x="323" y="151" width="42" height="42"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <constraints>
@@ -797,9 +797,9 @@
     </scenes>
     <resources>
         <image name="bitc-800x200" width="800" height="200"/>
-        <image name="bitcoinsign.circle.fill" catalog="system" width="64" height="62"/>
+        <image name="bitcoinsign.circle.fill" catalog="system" width="128" height="121"/>
         <image name="calculator" width="30" height="30"/>
         <image name="coins" width="30" height="30"/>
-        <image name="creditcard.fill" catalog="system" width="64" height="46"/>
+        <image name="creditcard.fill" catalog="system" width="128" height="91"/>
     </resources>
 </document>

@@ -12,49 +12,34 @@ enum Period: Int {
     case week
     case month
     case year
-    
-    var urlDateString: (startDate: String, endDate: String) {
+
+    var urlDateString: (startDate: String, endDate: String)? {
         let date = Date()
         let calendar = Calendar.current
-        var dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .weekday], from: date)
+        let dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .weekday], from: date)
         switch self {
         case .week:
             //Unfortunately, during the weekend there is no record of the course, and when requesting statistics on Sunday, only five values were returned. So I had to write such ugly code.
-            if dateComponents.weekday == 1 {
-                dateComponents.day = dateComponents.day! - 2
-                let endDate = calendar.date(from: dateComponents)!
-                let endDateString = endDate.formatingToString()
-                dateComponents.day = dateComponents.day! - 6
-                let startDate = calendar.date(from: dateComponents)!
-                let startDateString = startDate.formatingToString()
-                return (startDateString, endDateString)
-            } else if dateComponents.weekday == 7 {
-                dateComponents.day = dateComponents.day! - 1
-                let endDate = calendar.date(from: dateComponents)!
-                let endDateString = endDate.formatingToString()
-                dateComponents.day = dateComponents.day! - 6
-                let startDate = calendar.date(from: dateComponents)!
-                let startDateString = startDate.formatingToString()
-                return (startDateString, endDateString)
-            } else {
-                let endDateString = date.formatingToString()
-                dateComponents.day = dateComponents.day! - 6
-                let startDate = calendar.date(from: dateComponents)!
-                let startDateString = startDate.formatingToString()
-                return (startDateString, endDateString)
+            switch dateComponents.weekday {
+            case 1:
+                let endDate = Calendar.current.date(byAdding: .day, value: -2, to: date)
+                return datePeriod(from: endDate, period: 6)
+            case 7:
+                let endDate = Calendar.current.date(byAdding: .day, value: -1, to: date)
+                return datePeriod(from: endDate, period: 6)
+            default:
+                return datePeriod(from: date, period: 6)
             }
         case .month:
-            dateComponents.day = dateComponents.day! - 28
-            let startDate = calendar.date(from: dateComponents)!
-            let startDateString = startDate.formatingToString()
-            let endDateString = date.formatingToString()
-            return (startDateString, endDateString)
+            return datePeriod(from: date, period: 28)
         case .year:
-            dateComponents.day = dateComponents.day! - 360
-            let startDate = calendar.date(from: dateComponents)!
-            let startDateString = startDate.formatingToString()
-            let endDateString = date.formatingToString()
-            return (startDateString, endDateString)
+            return datePeriod(from: date, period: 360)
         }
+    }
+    
+    private func datePeriod(from date: Date?, period: Int) -> (String, String)? {
+        guard let endDate = date else { return nil }
+        guard let startDate = Calendar.current.date(byAdding: .day, value: -period, to: endDate) else { return nil }
+        return (startDate.formatingToString(), endDate.formatingToString())
     }
 }

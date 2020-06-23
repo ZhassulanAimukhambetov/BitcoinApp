@@ -11,8 +11,7 @@ import Charts
 
 class CoinsViewController: UIViewController {
 
-    
-    @IBOutlet weak var historyChartView: LineChartView!
+    @IBOutlet weak var histryChartsView: ChartsView!
     @IBOutlet weak var rateValueLabel: UILabel!
     @IBOutlet weak var periodSegmentControl: UISegmentedControl!
     @IBOutlet weak var currencySegmentControl: UISegmentedControl!
@@ -23,7 +22,7 @@ class CoinsViewController: UIViewController {
         guard let currency = Currency(rawValue: currencySegmentControl.selectedSegmentIndex) else { return }
         guard  let period = Period(rawValue: periodSegmentControl.selectedSegmentIndex) else { return }
         
-        configureChartView()
+        histryChartsView.configureChartView()
         configureSegmentControl()
         updateCurrencyValue(currency: currency)
         updateCurrencyHistory(currency: currency, period: period)
@@ -49,7 +48,7 @@ class CoinsViewController: UIViewController {
     func updateCurrencyHistory(currency: Currency, period: Period) {
         HistoryNetworkService.getDataPoints(currency: currency, period: period) { (dataPoints) in
             DispatchQueue.main.async {
-                self.setChart(dataHistory: dataPoints, currency: currency, period: period)
+                self.histryChartsView.setChart(dataHistory: dataPoints, currency: currency, period: period)
             }
         }
     }
@@ -67,36 +66,5 @@ class CoinsViewController: UIViewController {
     func configureSegmentControl() {
         periodSegmentControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
         currencySegmentControl.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
-    }
-    
-    func configureChartView() {
-        historyChartView.xAxis.drawLabelsEnabled = false
-        historyChartView.leftAxis.enabled = false
-        historyChartView.leftAxis.drawGridLinesEnabled = false
-        historyChartView.rightAxis.enabled = false
-        historyChartView.rightAxis.drawGridLinesEnabled = false
-        historyChartView.backgroundColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1)
-    }
-    
-    func setChart (dataHistory: [Double], currency: Currency, period: Period) {
-        var yValues = [ChartDataEntry]()
-        for (index, value) in dataHistory.enumerated() {
-            let dataEntry = ChartDataEntry(x: Double(index + 1), y: value)
-            yValues.append(dataEntry)
-        }
-        
-        let lineDataSet = LineChartDataSet(entries: yValues, label: currency.name)
-        lineDataSet.valueFont = .boldSystemFont(ofSize: 10)
-        lineDataSet.valueTextColor = .white
-        lineDataSet.drawFilledEnabled = true
-        lineDataSet.circleRadius = 3.0
-        lineDataSet.circleHoleRadius = 2.0
-        
-        var chartDataSet: [LineChartDataSet] = []
-        chartDataSet.append(lineDataSet)
-        let chartData = LineChartData(dataSets: chartDataSet)
-        
-        historyChartView.data = chartData
-        historyChartView.animate(xAxisDuration: 0.3, yAxisDuration: 0.2)
     }
 }

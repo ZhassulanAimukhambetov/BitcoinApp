@@ -13,7 +13,8 @@ class HistoryNetworkService {
     static private let urlApi: String = "https://api.coindesk.com/v1/bpi/historical/close.json"
     
     static func getDataPoints(currency: Currency, period: Period, completion: @escaping ([Double]) -> Void) {
-        let urlString = "\(urlApi)?currency=\(currency.name)&start=\(period.urlDateString.startDate)&end=\(period.urlDateString.endDate)"
+        guard let urlDate = period.urlDateString else { return }
+        let urlString = "\(urlApi)?currency=\(currency.name)&start=\(urlDate.startDate)&end=\(urlDate.endDate)"
         guard let url = URL(string: urlString) else { return }
         NetworkService.shared.getData(url: url) { (data) in
             do {
